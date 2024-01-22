@@ -1,0 +1,31 @@
+{
+  "name": "quote-of-the-day",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "e2e": "cypress run --spec cypress/e2e/*.spec.cy.js",
+    "test": "echo \"I don't know what to run\" && exit 1",
+    "build": "esbuild src/index.jsx --bundle --outfile=dist/main.js",
+    "watch": "esbuild --bundle src/index.jsx --outfile=dist/main.js --watch",
+    "start": "http-server dist -p 3000",
+    "lint": "eslint src/",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.6.3",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "http-server": "^14.1.1",
+    "husky": "^8.0.0"
+  },
+  "dependencies": {
+    "esbuild": "0.19.11",
+    "eslint-config-airbnb": "^19.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
