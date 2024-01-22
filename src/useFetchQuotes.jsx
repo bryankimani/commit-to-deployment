@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const useFetchQuotes = () => {
   const [quotes, setQuotes] = useState([]);
@@ -6,13 +6,14 @@ const useFetchQuotes = () => {
 
   const fetchQuotes = () => {
     setLoading(true);
-    fetch('https://api.quotable.io/quotes/random?limit=3')
+    fetch("https://api.quotable.io/quotes/random?limit=3")
       .then((r) => r.json())
       .then((data) => {
         setLoading(false);
         setQuotes(data);
       })
       .catch((error) => {
+        console.error(error);
         setLoading(false);
       });
   };

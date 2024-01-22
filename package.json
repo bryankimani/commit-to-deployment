@@ -9,7 +9,7 @@
     "build": "esbuild src/index.jsx --bundle --outfile=dist/main.js",
     "watch": "esbuild --bundle src/index.jsx --outfile=dist/main.js --watch",
     "start": "http-server dist -p 3000",
-    "lint": "",
+    "lint": "eslint src/*",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -18,6 +18,8 @@
   "devDependencies": {
     "cypress": "^13.6.3",
     "eslint": "^8.56.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.33.2",
     "http-server": "^14.1.1",
     "husky": "^8.0.0"

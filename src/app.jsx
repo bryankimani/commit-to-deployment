@@ -1,6 +1,6 @@
-import React from 'react';
-import { useFetchQuotes } from './useFetchQuotes';
-import { Quote } from './quote';
+import React from "react";
+import { useFetchQuotes } from "./useFetchQuotes";
+import { Quote } from "./quote";
 
 function App() {
   const [index, setIndex] = React.useState(0);
