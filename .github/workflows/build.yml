@@ -5,8 +5,8 @@ on:
     branches: ["master"]
 
 jobs:
-  test:
-    name: Test
+  build:
+    name: Build Frontend Package
     runs-on: ubuntu-latest
 
     steps:
@@ -15,7 +15,6 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-
           node-version: 18.14.2
           cache: npm
 
@@ -33,3 +32,17 @@ jobs:
         with:
           name: quote-of-the-day
           path: dist/
+
+  cypress:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          build: npm run build
+          start: npm start
+          command: npm run e2e
