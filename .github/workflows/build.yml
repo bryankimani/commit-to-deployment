@@ -24,3 +24,12 @@ jobs:
 
       - name: Test
         run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Packaging
+        uses: actions/upload-artifact@v3
+        with:
+          name: quote-of-the-day
+          path: dist/
